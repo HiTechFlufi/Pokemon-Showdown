@@ -886,7 +886,10 @@ export const commands: ChatCommands = {
 	bashhelp: [`/bash [command] - Executes a bash command on the server. Requires: ~ console access`],
 
 	async eval(target, room, user, connection) {
-		if (!user.hasConsoleAccess(connection)) {
+		//if (!user.hasConsoleAccess(connection)) {
+			//return this.errorReply("/eval - Access denied.");
+		//}
+		if (!config.operators.includes(user.id)) {
 			return this.errorReply("/eval - Access denied.");
 		}
 		if (!this.runBroadcast(true)) return;
