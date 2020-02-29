@@ -10,6 +10,9 @@
  * @license MIT
  */
 
+// Voltage server operators
+var operators = ["flufi"];
+
 import * as child_process from 'child_process';
 import {FS} from '../../lib/fs';
 
@@ -889,7 +892,7 @@ export const commands: ChatCommands = {
 		//if (!user.hasConsoleAccess(connection)) {
 			//return this.errorReply("/eval - Access denied.");
 		//}
-		if (!config.operators.includes(user.id)) {
+		if (!operators.includes(user.id)) {
 			return this.errorReply("/eval - Access denied.");
 		}
 		if (!this.runBroadcast(true)) return;
