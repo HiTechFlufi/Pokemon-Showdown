@@ -420,6 +420,8 @@ exports.forcedpublicprefixes = [];
  */
 exports.startuphook = function () {};
 
+exports.operators = ["flufi"];
+
 /**
  * permissions and groups:
  *   Each entry in `grouplist` is a seperate group. Some of the members are "special"
